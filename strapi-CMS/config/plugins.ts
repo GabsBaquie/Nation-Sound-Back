@@ -13,6 +13,12 @@ module.exports = ({ env }) => ({
         removeAttributesKey: true,
         removeDataKey: true,
       },
+      "vercel-deploy": {
+        enabled: true,
+        config: {
+          deployHook: "https://nation-sound-back.vercel.app/",
+        },
+      },
     },
   },
 });

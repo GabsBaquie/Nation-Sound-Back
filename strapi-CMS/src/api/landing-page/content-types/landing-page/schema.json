@@ -23,11 +23,7 @@
     "blocks": {
       "type": "dynamiczone",
       "components": [
-        "blocks.hero",
-        "blocks.row",
-        "blocks.princing",
-        "blocks.cta",
-        "blocks.article"
+        "blocks.hero"
       ]
     }
   }

@@ -802,15 +802,7 @@ export interface ApiLandingPageLandingPage extends Schema.CollectionType {
   attributes: {
     slug: Attribute.UID;
     metaData: Attribute.Component<'seo.meta-data'>;
-    blocks: Attribute.DynamicZone<
-      [
-        'blocks.hero',
-        'blocks.row',
-        'blocks.princing',
-        'blocks.cta',
-        'blocks.article'
-      ]
-    >;
+    blocks: Attribute.DynamicZone<['blocks.hero']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
