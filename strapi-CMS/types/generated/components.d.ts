@@ -1,5 +1,17 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface SeoMetaData extends Schema.Component {
+  collectionName: 'components_seo_meta_data';
+  info: {
+    displayName: 'Meta Data';
+  };
+  attributes: {
+    metaTitle: Attribute.String;
+    metaDescription: Attribute.Text;
+    metaImage: Attribute.Media<'images'>;
+  };
+}
+
 export interface ElementsSection extends Schema.Component {
   collectionName: 'components_elements_sections';
   info: {
@@ -86,18 +98,6 @@ export interface ElementsButtonLink extends Schema.Component {
   };
 }
 
-export interface SeoMetaData extends Schema.Component {
-  collectionName: 'components_seo_meta_data';
-  info: {
-    displayName: 'Meta Data';
-  };
-  attributes: {
-    metaTitle: Attribute.String;
-    metaDescription: Attribute.Text;
-    metaImage: Attribute.Media<'images'>;
-  };
-}
-
 export interface BlocksRow extends Schema.Component {
   collectionName: 'components_blocks_rows';
   info: {
@@ -163,13 +163,13 @@ export interface BlocksArticle extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'seo.meta-data': SeoMetaData;
       'elements.section': ElementsSection;
       'elements.princing-card': ElementsPrincingCard;
       'elements.input': ElementsInput;
       'elements.form': ElementsForm;
       'elements.card': ElementsCard;
       'elements.button-link': ElementsButtonLink;
-      'seo.meta-data': SeoMetaData;
       'blocks.row': BlocksRow;
       'blocks.princing': BlocksPrincing;
       'blocks.hero': BlocksHero;
