@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_blocks_princings",
+  "info": {
+    "displayName": "Princing"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "plan": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.princing-card"
+    }
+  }
+}

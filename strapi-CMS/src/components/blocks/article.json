@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_elements_articles",
+  "info": {
+    "displayName": "Article",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Article": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.card"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button-link"
+    }
+  }
+}
