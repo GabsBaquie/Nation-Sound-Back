@@ -800,7 +800,9 @@ export interface ApiLandingPageLandingPage extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    slug: Attribute.UID;
+    title: Attribute.String;
+    description: Attribute.Text;
+    slug: Attribute.UID<'api::landing-page.landing-page', 'title'>;
     metaData: Attribute.Component<'seo.meta-data'>;
     blocks: Attribute.DynamicZone<
       [
