@@ -7,9 +7,9 @@ export default ({ env }) => {
       connection: {
         host: env("DATABASE_HOST", "127.0.0.1"),
         port: env.int("DATABASE_PORT", 3306),
-        database: env("DATABASE_NAME", "NationSounds"),
+        database: env("DATABASE_NAME", "railway"),
         user: env("DATABASE_USERNAME", "root"),
-        password: env("DATABASE_PASSWORD", "root"),
+        password: env("DATABASE_PASSWORD", "QMVgOBeAUjosMGEIBqHcSpJAkPMdUUkv"),
         ssl: env.bool("DATABASE_SSL", true),
       },
       debug: false,
