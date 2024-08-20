@@ -10,7 +10,7 @@ export default ({ env }) => {
         database: env("DATABASE_NAME", "NationSounds"),
         user: env("DATABASE_USERNAME", "root"),
         password: env("DATABASE_PASSWORD", "root"),
-        ssl: env.bool("DATABASE_SSL", false),
+        ssl: env.bool("DATABASE_SSL", true),
       },
       debug: false,
     },
