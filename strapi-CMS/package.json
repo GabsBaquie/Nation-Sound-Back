@@ -20,7 +20,7 @@
     "@strapi/plugin-users-permissions": "4.25.6",
     "@strapi/strapi": "4.25.6",
     "marked": "^13.0.3",
-    "mysql": "2.18.1",
+    "mysql": "^2.18.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^5.2.0",
@@ -28,14 +28,14 @@
     "strapi-plugin-wysiwyg-react-md-editor": "^4.5.3",
     "styled-components": "^5.2.1"
   },
+  "devDependencies": {
+    "@strapi/typescript-utils": "^4.25.8"
+  },
   "engines": {
     "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
   "strapi": {
     "uuid": "6786d2ab-03ea-4a97-bbc4-380659a5f68e"
-  },
-  "devDependencies": {
-    "@strapi/typescript-utils": "^4.25.8"
   }
 }
