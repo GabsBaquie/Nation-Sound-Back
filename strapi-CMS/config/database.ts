@@ -5,7 +5,7 @@ export default ({ env }) => {
     mysql: {
       client: "mysql2",
       connection: {
-        host: env("DATABASE_HOST", "127.0.0.1"),
+        host: env("DATABASE_HOST", "autorack.proxy.rlwy.net"),
         port: env.int("DATABASE_PORT", 3306),
         database: env("DATABASE_NAME", "railway"),
         user: env("DATABASE_USERNAME", "root"),
