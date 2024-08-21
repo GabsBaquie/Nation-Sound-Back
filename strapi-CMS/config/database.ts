@@ -13,7 +13,7 @@ export default ({ env }) => {
         password: env("DATABASE_PASSWORD", "QMVgOBeAUjosMGEIBqHcSpJAkPMdUUkv"),
         ssl: env.bool("DATABASE_SSL", false),
       },
-      debug: false,
+      debug: true,
     },
     mysql2: {
       client: "mysql2",
@@ -26,7 +26,7 @@ export default ({ env }) => {
         ssl: env.bool("DATABASE_SSL", false),
         bigNumberStrings: true, // Cette option est propre à mysql2
       },
-      debug: false,
+      debug: true,
     },
   };
 
