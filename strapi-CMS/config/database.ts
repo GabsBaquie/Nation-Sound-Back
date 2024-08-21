@@ -2,7 +2,7 @@ export default ({ env }) => {
   const client = env("DATABASE_CLIENT", "mysql2");
 
   const connections = {
-    mysql: {
+    mysql2: {
       client: "mysql2",
       connection: {
         host: env("DATABASE_HOST", "autorack.proxy.rlwy.net"),
@@ -10,10 +10,10 @@ export default ({ env }) => {
         database: env("DATABASE_NAME", "railway"),
         user: env("DATABASE_USERNAME", "root"),
         password: env("DATABASE_PASSWORD", "QMVgOBeAUjosMGEIBqHcSpJAkPMdUUkv"),
-        ssl: env.bool("DATABASE_SSL", true),
-        bigNumberStrings: true,
+        ssl: env.bool("DATABASE_SSL", false),
+        bigNumberStrings: true, // Cette option est propre à mysql2
       },
-      debug: true,
+      debug: true, // Activer le debug pour plus d'informations
     },
   };
 
