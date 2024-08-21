@@ -1,10 +1,10 @@
 export default ({ env }) => {
   // Utiliser mysql2 localement et mysql sur RailWay
-  const client = env("NODE_ENV") === "production" ? "mysql" : "mysql2";
+  const client = env("NODE_ENV") === "production" ? "mysql2" : "mysql2";
 
   const connections = {
     mysql: {
-      client: "mysql",
+      client: "mysql2",
       connection: {
         host: env("DATABASE_HOST", "autorack.proxy.rlwy.net"),
         port: env.int("DATABASE_PORT", 59624),
@@ -26,7 +26,7 @@ export default ({ env }) => {
         ssl: env.bool("DATABASE_SSL", false),
         bigNumberStrings: true, // Cette option est propre à mysql2
       },
-      debug: true,
+      debug: false,
     },
   };
 
