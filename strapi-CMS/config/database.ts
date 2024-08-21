@@ -1,9 +1,9 @@
 export default ({ env }) => {
-  const client = env("DATABASE_CLIENT", "mysql2");
+  const client = env("DATABASE_CLIENT", "mysql");
 
   const connections = {
     mysql: {
-      client: "mysql",
+      client: "mysql2",
       connection: {
         host: env("DATABASE_HOST", "autorack.proxy.rlwy.net"),
         port: env.int("DATABASE_PORT", 59624),
