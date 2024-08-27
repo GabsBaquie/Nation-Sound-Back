@@ -9,7 +9,7 @@
     "title": {
       "type": "string"
     },
-    "description": {
+    "text": {
       "type": "text"
     },
     "card": {
@@ -21,9 +21,7 @@
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     }
   }
 }

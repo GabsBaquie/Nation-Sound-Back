@@ -22,17 +22,9 @@
       "type": "uid",
       "targetField": "title"
     },
-    "metaData": {
-      "type": "component",
-      "repeatable": false,
-      "component": "seo.meta-data"
-    },
     "blocks": {
       "type": "dynamiczone",
-      "components": [
-        "blocks.hero",
-        "blocks.programmation"
-      ]
+      "components": ["blocks.hero", "blocks.programmation"]
     }
   }
 }
