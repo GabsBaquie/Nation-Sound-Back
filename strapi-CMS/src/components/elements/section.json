@@ -6,9 +6,7 @@
   "options": {},
   "attributes": {
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
+      "allowedTypes": ["images"],
       "type": "media",
       "multiple": false,
       "required": false
@@ -16,7 +14,7 @@
     "title": {
       "type": "string"
     },
-    "description": {
+    "text": {
       "type": "text"
     },
     "button": {

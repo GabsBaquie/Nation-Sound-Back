@@ -77,8 +77,8 @@ export interface ElementsCard extends Schema.Component {
   };
   attributes: {
     image: Attribute.Media<'images'>;
-    heading: Attribute.String;
-    description: Attribute.Text;
+    title: Attribute.String;
+    text: Attribute.Text;
   };
 }
 
@@ -117,7 +117,7 @@ export interface BlocksProgrammation extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.Text;
+    text: Attribute.Text;
     card: Attribute.Component<'elements.card', true>;
     image: Attribute.Media<'images', true>;
   };
