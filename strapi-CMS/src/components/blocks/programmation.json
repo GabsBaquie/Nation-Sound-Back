@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_blocks_programmations",
+  "info": {
+    "displayName": "Programmation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "card": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.card"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

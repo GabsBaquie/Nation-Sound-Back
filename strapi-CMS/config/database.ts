@@ -13,7 +13,7 @@ export default ({ env }) => {
         ssl: env.bool("DATABASE_SSL", false),
         bigNumberStrings: true, // Cette option est propre à mysql2
       },
-      debug: true, // Activer le debug pour plus d'informations
+      debug: false, // Activer le debug pour plus d'informations
     },
   };
 

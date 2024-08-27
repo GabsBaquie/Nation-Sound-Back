@@ -109,6 +109,20 @@ export interface BlocksRow extends Schema.Component {
   };
 }
 
+export interface BlocksProgrammation extends Schema.Component {
+  collectionName: 'components_blocks_programmations';
+  info: {
+    displayName: 'Programmation';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    card: Attribute.Component<'elements.card', true>;
+    image: Attribute.Media<'images', true>;
+  };
+}
+
 export interface BlocksPrincing extends Schema.Component {
   collectionName: 'components_blocks_princings';
   info: {
@@ -171,6 +185,7 @@ declare module '@strapi/types' {
       'elements.card': ElementsCard;
       'elements.button-link': ElementsButtonLink;
       'blocks.row': BlocksRow;
+      'blocks.programmation': BlocksProgrammation;
       'blocks.princing': BlocksPrincing;
       'blocks.hero': BlocksHero;
       'blocks.cta': BlocksCta;
