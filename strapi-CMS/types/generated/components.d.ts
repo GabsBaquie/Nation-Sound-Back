@@ -40,7 +40,7 @@ export interface ElementsPrincingCard extends Schema.Component {
       'oneToMany',
       'api::service.service'
     >;
-    link: Attribute.Component<'elements.button-link'>;
+    button: Attribute.Component<'elements.button-link'>;
   };
 }
 

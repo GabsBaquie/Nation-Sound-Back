@@ -21,7 +21,7 @@
       "relation": "oneToMany",
       "target": "api::service.service"
     },
-    "link": {
+    "button": {
       "type": "component",
       "repeatable": false,
       "component": "elements.button-link"
