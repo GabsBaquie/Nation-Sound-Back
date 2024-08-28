@@ -5,10 +5,10 @@
   },
   "options": {},
   "attributes": {
-    "name": {
+    "title": {
       "type": "string"
     },
-    "description": {
+    "text": {
       "type": "string"
     },
     "plan": {
