@@ -120,6 +120,7 @@ export interface BlocksProgrammation extends Schema.Component {
     text: Attribute.Text;
     card: Attribute.Component<'elements.card', true>;
     image: Attribute.Media<'images'>;
+    image2: Attribute.Media<'images'>;
   };
 }
 
