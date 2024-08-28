@@ -20,7 +20,7 @@ export interface ElementsSection extends Schema.Component {
   attributes: {
     image: Attribute.Media<'images'>;
     title: Attribute.String;
-    description: Attribute.Text;
+    text: Attribute.Text;
     button: Attribute.Component<'elements.button-link'>;
   };
 }
@@ -119,7 +119,7 @@ export interface BlocksProgrammation extends Schema.Component {
     title: Attribute.String;
     text: Attribute.Text;
     card: Attribute.Component<'elements.card', true>;
-    image: Attribute.Media<'images', true>;
+    image: Attribute.Media<'images'>;
   };
 }
 

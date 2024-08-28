@@ -18,10 +18,14 @@
       "component": "elements.card"
     },
     "image": {
+      "allowedTypes": ["images"],
       "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": ["images"]
+      "multiple": false
+    },
+    "image2": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false
     }
   }
 }
