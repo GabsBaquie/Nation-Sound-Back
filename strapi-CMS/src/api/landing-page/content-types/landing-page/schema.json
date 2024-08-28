@@ -24,7 +24,7 @@
     },
     "blocks": {
       "type": "dynamiczone",
-      "components": ["blocks.hero", "blocks.programmation"]
+      "components": ["blocks.hero", "blocks.programmation", "blocks.princing"]
     }
   }
 }
