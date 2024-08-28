@@ -130,8 +130,8 @@ export interface BlocksPrincing extends Schema.Component {
     displayName: 'Princing';
   };
   attributes: {
-    name: Attribute.String;
-    description: Attribute.String;
+    title: Attribute.String;
+    text: Attribute.String;
     plan: Attribute.Component<'elements.princing-card', true>;
   };
 }
