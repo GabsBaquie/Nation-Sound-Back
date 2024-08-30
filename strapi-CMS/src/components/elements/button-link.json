@@ -19,7 +19,7 @@
     },
     "type": {
       "type": "enumeration",
-      "enum": ["primary", "secondary", "black"],
+      "enum": ["primary", "secondary"],
       "default": "primary",
       "required": true
     }
