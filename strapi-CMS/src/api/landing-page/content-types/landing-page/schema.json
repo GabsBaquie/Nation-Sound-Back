@@ -28,7 +28,8 @@
         "blocks.hero",
         "blocks.programmation",
         "blocks.princing",
-        "blocks.map"
+        "blocks.map",
+        "blocks.faq"
       ]
     }
   }

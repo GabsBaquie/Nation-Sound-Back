@@ -844,7 +844,13 @@ export interface ApiLandingPageLandingPage extends Schema.CollectionType {
     description: Attribute.Text;
     slug: Attribute.UID<'api::landing-page.landing-page', 'title'>;
     blocks: Attribute.DynamicZone<
-      ['blocks.hero', 'blocks.programmation', 'blocks.princing', 'blocks.map']
+      [
+        'blocks.hero',
+        'blocks.programmation',
+        'blocks.princing',
+        'blocks.map',
+        'blocks.faq'
+      ]
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
