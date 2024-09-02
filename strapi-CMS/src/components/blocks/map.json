@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_maps",
+  "info": {
+    "displayName": "Map",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "POI": {
+      "displayName": "POI",
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.poi"
+    }
+  }
+}

@@ -44,6 +44,31 @@ export interface ElementsPrincingCard extends Schema.Component {
   };
 }
 
+export interface ElementsPoi extends Schema.Component {
+  collectionName: 'components_elements_pois';
+  info: {
+    displayName: 'POI';
+    description: '';
+  };
+  attributes: {
+    Name: Attribute.String;
+    Type: Attribute.Enumeration<
+      [
+        'Sc\u00E8nes',
+        'Toilettes',
+        'Campings',
+        'VIP',
+        'Bars',
+        'Restaurants',
+        'Boutiques'
+      ]
+    >;
+    Latitude: Attribute.Decimal;
+    Longitude: Attribute.Decimal;
+    Description: Attribute.Text;
+  };
+}
+
 export interface ElementsInput extends Schema.Component {
   collectionName: 'components_elements_inputs';
   info: {
@@ -136,6 +161,19 @@ export interface BlocksPrincing extends Schema.Component {
   };
 }
 
+export interface BlocksMap extends Schema.Component {
+  collectionName: 'components_blocks_maps';
+  info: {
+    displayName: 'Map';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    text: Attribute.Text;
+    POI: Attribute.Component<'elements.poi', true>;
+  };
+}
+
 export interface BlocksHero extends Schema.Component {
   collectionName: 'components_blocks_heroes';
   info: {
@@ -181,6 +219,7 @@ declare module '@strapi/types' {
       'seo.meta-data': SeoMetaData;
       'elements.section': ElementsSection;
       'elements.princing-card': ElementsPrincingCard;
+      'elements.poi': ElementsPoi;
       'elements.input': ElementsInput;
       'elements.form': ElementsForm;
       'elements.card': ElementsCard;
@@ -188,6 +227,7 @@ declare module '@strapi/types' {
       'blocks.row': BlocksRow;
       'blocks.programmation': BlocksProgrammation;
       'blocks.princing': BlocksPrincing;
+      'blocks.map': BlocksMap;
       'blocks.hero': BlocksHero;
       'blocks.cta': BlocksCta;
       'blocks.article': BlocksArticle;

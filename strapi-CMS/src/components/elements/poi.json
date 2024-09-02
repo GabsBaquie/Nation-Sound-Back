@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_elements_pois",
+  "info": {
+    "displayName": "POI",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Scènes",
+        "Toilettes",
+        "Campings",
+        "VIP",
+        "Bars",
+        "Restaurants",
+        "Boutiques"
+      ]
+    },
+    "Latitude": {
+      "type": "decimal"
+    },
+    "Longitude": {
+      "type": "decimal"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

@@ -590,6 +590,46 @@ export interface PluginContentReleasesReleaseAction
   };
 }
 
+export interface PluginGoogleMapsConfig extends Schema.SingleType {
+  collectionName: 'google_maps_configs';
+  info: {
+    singularName: 'config';
+    pluralName: 'configs';
+    displayName: 'Google Maps Config';
+  };
+  options: {
+    populateCreatorFields: false;
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    googleMapsKey: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<''>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::google-maps.config',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::google-maps.config',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginI18NLocale extends Schema.CollectionType {
   collectionName: 'i18n_locale';
   info: {
@@ -804,7 +844,7 @@ export interface ApiLandingPageLandingPage extends Schema.CollectionType {
     description: Attribute.Text;
     slug: Attribute.UID<'api::landing-page.landing-page', 'title'>;
     blocks: Attribute.DynamicZone<
-      ['blocks.hero', 'blocks.programmation', 'blocks.princing']
+      ['blocks.hero', 'blocks.programmation', 'blocks.princing', 'blocks.map']
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -868,6 +908,7 @@ declare module '@strapi/types' {
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
+      'plugin::google-maps.config': PluginGoogleMapsConfig;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
