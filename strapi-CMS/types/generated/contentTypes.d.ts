@@ -849,7 +849,8 @@ export interface ApiLandingPageLandingPage extends Schema.CollectionType {
         'blocks.programmation',
         'blocks.princing',
         'blocks.map',
-        'blocks.faq'
+        'blocks.faq',
+        'blocks.infos'
       ]
     >;
     createdAt: Attribute.DateTime;

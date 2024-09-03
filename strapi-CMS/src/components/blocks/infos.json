@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_infos",
+  "info": {
+    "displayName": "Infos",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "carrousel": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.card"
+    }
+  }
+}
