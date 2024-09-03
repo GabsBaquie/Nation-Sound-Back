@@ -113,9 +113,10 @@ export interface ElementsCard extends Schema.Component {
     description: '';
   };
   attributes: {
-    image: Attribute.Media<'images'>;
     title: Attribute.String;
+    image: Attribute.Media<'images'>;
     text: Attribute.Text;
+    description: Attribute.String;
   };
 }
 

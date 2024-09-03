@@ -5,18 +5,25 @@
     "description": ""
   },
   "options": {},
+
   "attributes": {
+    "title": {
+      "type": "string"
+    },
+
     "image": {
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": ["images"]
     },
-    "title": {
-      "type": "string"
-    },
+
     "text": {
       "type": "text"
+    },
+
+    "description": {
+      "type": "string"
     }
   }
 }
