@@ -828,6 +828,44 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiBilletterieBilletterie extends Schema.CollectionType {
+  collectionName: 'billetteries';
+  info: {
+    singularName: 'billetterie';
+    pluralName: 'billetteries';
+    displayName: 'Billetterie';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    slug: Attribute.UID<'api::billetterie.billetterie', 'title'>;
+    landing_page: Attribute.Relation<
+      'api::billetterie.billetterie',
+      'oneToOne',
+      'api::landing-page.landing-page'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::billetterie.billetterie',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::billetterie.billetterie',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLandingPageLandingPage extends Schema.CollectionType {
   collectionName: 'landing_pages';
   info: {
@@ -920,6 +958,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::billetterie.billetterie': ApiBilletterieBilletterie;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::service.service': ApiServiceService;
     }
