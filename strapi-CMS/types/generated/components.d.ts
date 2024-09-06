@@ -75,9 +75,9 @@ export interface ElementsPoi extends Schema.Component {
         'Boutiques'
       ]
     >;
-    Latitude: Attribute.Decimal;
-    Longitude: Attribute.Decimal;
     Description: Attribute.Text;
+    POI: Attribute.JSON &
+      Attribute.CustomField<'plugin::google-maps.location-picker'>;
   };
 }
 

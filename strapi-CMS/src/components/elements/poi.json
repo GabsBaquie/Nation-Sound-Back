@@ -21,14 +21,13 @@
         "Boutiques"
       ]
     },
-    "Latitude": {
-      "type": "decimal"
-    },
-    "Longitude": {
-      "type": "decimal"
-    },
     "Description": {
       "type": "text"
+    },
+    "POI": {
+      "type": "customField",
+      "required": false,
+      "customField": "plugin::google-maps.location-picker"
     }
   }
 }
