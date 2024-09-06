@@ -1,10 +1,11 @@
 {
   "kind": "singleType",
-  "collectionName": "billetteries",
+  "collectionName": "programmations",
   "info": {
-    "singularName": "billetterie",
-    "pluralName": "billetteries",
-    "displayName": "Billetterie"
+    "singularName": "programmation",
+    "pluralName": "programmations",
+    "displayName": "Programmation",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

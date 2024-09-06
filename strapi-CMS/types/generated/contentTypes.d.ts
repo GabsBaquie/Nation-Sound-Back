@@ -828,21 +828,19 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiBilletterieBilletterie extends Schema.CollectionType {
+export interface ApiBilletterieBilletterie extends Schema.SingleType {
   collectionName: 'billetteries';
   info: {
     singularName: 'billetterie';
     pluralName: 'billetteries';
     displayName: 'Billetterie';
-    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.Text;
-    slug: Attribute.UID<'api::billetterie.billetterie', 'title'>;
+    description: Attribute.String;
     landing_page: Attribute.Relation<
       'api::billetterie.billetterie',
       'oneToOne',
@@ -909,6 +907,43 @@ export interface ApiLandingPageLandingPage extends Schema.CollectionType {
   };
 }
 
+export interface ApiProgrammationProgrammation extends Schema.SingleType {
+  collectionName: 'programmations';
+  info: {
+    singularName: 'programmation';
+    pluralName: 'programmations';
+    displayName: 'Programmation';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.String;
+    landing_page: Attribute.Relation<
+      'api::programmation.programmation',
+      'oneToOne',
+      'api::landing-page.landing-page'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::programmation.programmation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::programmation.programmation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Schema.CollectionType {
   collectionName: 'services';
   info: {
@@ -960,6 +995,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::billetterie.billetterie': ApiBilletterieBilletterie;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
+      'api::programmation.programmation': ApiProgrammationProgrammation;
       'api::service.service': ApiServiceService;
     }
   }

@@ -12,6 +12,110 @@ export interface SeoMetaData extends Schema.Component {
   };
 }
 
+export interface BlocksProgrammation extends Schema.Component {
+  collectionName: 'components_blocks_programmations';
+  info: {
+    displayName: 'Programmation';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    text: Attribute.Text;
+    card: Attribute.Component<'elements.card', true>;
+    image: Attribute.Media<'images'>;
+    image2: Attribute.Media<'images'>;
+  };
+}
+
+export interface BlocksPrincing extends Schema.Component {
+  collectionName: 'components_blocks_princings';
+  info: {
+    displayName: 'Princing';
+  };
+  attributes: {
+    title: Attribute.String;
+    text: Attribute.String;
+    plan: Attribute.Component<'elements.princing-card', true>;
+  };
+}
+
+export interface BlocksMap extends Schema.Component {
+  collectionName: 'components_blocks_maps';
+  info: {
+    displayName: 'Map';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    text: Attribute.Text;
+    POI: Attribute.Component<'elements.poi', true>;
+  };
+}
+
+export interface BlocksInfos extends Schema.Component {
+  collectionName: 'components_blocks_infos';
+  info: {
+    displayName: 'Infos';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    text: Attribute.Text;
+    carrousel: Attribute.Component<'elements.card', true>;
+  };
+}
+
+export interface BlocksHero extends Schema.Component {
+  collectionName: 'components_blocks_heroes';
+  info: {
+    displayName: 'Hero';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    text: Attribute.Text;
+    BtnLink: Attribute.Component<'elements.button-link', true>;
+    image: Attribute.Media<'images'>;
+    section: Attribute.Component<'elements.section'>;
+  };
+}
+
+export interface BlocksFaq extends Schema.Component {
+  collectionName: 'components_blocks_faqs';
+  info: {
+    displayName: 'FAQ';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    questions: Attribute.Component<'elements.questions', true>;
+  };
+}
+
+export interface BlocksCta extends Schema.Component {
+  collectionName: 'components_blocks_ctas';
+  info: {
+    displayName: 'Cta';
+  };
+  attributes: {
+    heading: Attribute.String;
+    description: Attribute.Text;
+    form: Attribute.Component<'elements.form'>;
+  };
+}
+
+export interface BlocksArticle extends Schema.Component {
+  collectionName: 'components_elements_articles';
+  info: {
+    displayName: 'Article';
+    description: '';
+  };
+  attributes: {
+    Article: Attribute.Component<'elements.card', true>;
+    link: Attribute.Component<'elements.button-link'>;
+  };
+}
+
 export interface ElementsSection extends Schema.Component {
   collectionName: 'components_elements_sections';
   info: {
@@ -136,122 +240,10 @@ export interface ElementsButtonLink extends Schema.Component {
   };
 }
 
-export interface BlocksProgrammation extends Schema.Component {
-  collectionName: 'components_blocks_programmations';
-  info: {
-    displayName: 'Programmation';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    text: Attribute.Text;
-    card: Attribute.Component<'elements.card', true>;
-    image: Attribute.Media<'images'>;
-    image2: Attribute.Media<'images'>;
-  };
-}
-
-export interface BlocksPrincing extends Schema.Component {
-  collectionName: 'components_blocks_princings';
-  info: {
-    displayName: 'Princing';
-  };
-  attributes: {
-    title: Attribute.String;
-    text: Attribute.String;
-    plan: Attribute.Component<'elements.princing-card', true>;
-  };
-}
-
-export interface BlocksMap extends Schema.Component {
-  collectionName: 'components_blocks_maps';
-  info: {
-    displayName: 'Map';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    text: Attribute.Text;
-    POI: Attribute.Component<'elements.poi', true>;
-  };
-}
-
-export interface BlocksInfos extends Schema.Component {
-  collectionName: 'components_blocks_infos';
-  info: {
-    displayName: 'Infos';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    text: Attribute.Text;
-    carrousel: Attribute.Component<'elements.card', true>;
-  };
-}
-
-export interface BlocksHero extends Schema.Component {
-  collectionName: 'components_blocks_heroes';
-  info: {
-    displayName: 'Hero';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    text: Attribute.Text;
-    BtnLink: Attribute.Component<'elements.button-link', true>;
-    image: Attribute.Media<'images'>;
-    section: Attribute.Component<'elements.section'>;
-  };
-}
-
-export interface BlocksFaq extends Schema.Component {
-  collectionName: 'components_blocks_faqs';
-  info: {
-    displayName: 'FAQ';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    questions: Attribute.Component<'elements.questions', true>;
-  };
-}
-
-export interface BlocksCta extends Schema.Component {
-  collectionName: 'components_blocks_ctas';
-  info: {
-    displayName: 'Cta';
-  };
-  attributes: {
-    heading: Attribute.String;
-    description: Attribute.Text;
-    form: Attribute.Component<'elements.form'>;
-  };
-}
-
-export interface BlocksArticle extends Schema.Component {
-  collectionName: 'components_elements_articles';
-  info: {
-    displayName: 'Article';
-    description: '';
-  };
-  attributes: {
-    Article: Attribute.Component<'elements.card', true>;
-    link: Attribute.Component<'elements.button-link'>;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'seo.meta-data': SeoMetaData;
-      'elements.section': ElementsSection;
-      'elements.questions': ElementsQuestions;
-      'elements.princing-card': ElementsPrincingCard;
-      'elements.poi': ElementsPoi;
-      'elements.input': ElementsInput;
-      'elements.form': ElementsForm;
-      'elements.card': ElementsCard;
-      'elements.button-link': ElementsButtonLink;
       'blocks.programmation': BlocksProgrammation;
       'blocks.princing': BlocksPrincing;
       'blocks.map': BlocksMap;
@@ -260,6 +252,14 @@ declare module '@strapi/types' {
       'blocks.faq': BlocksFaq;
       'blocks.cta': BlocksCta;
       'blocks.article': BlocksArticle;
+      'elements.section': ElementsSection;
+      'elements.questions': ElementsQuestions;
+      'elements.princing-card': ElementsPrincingCard;
+      'elements.poi': ElementsPoi;
+      'elements.input': ElementsInput;
+      'elements.form': ElementsForm;
+      'elements.card': ElementsCard;
+      'elements.button-link': ElementsButtonLink;
     }
   }
 }
