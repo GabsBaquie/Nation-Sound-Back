@@ -114,7 +114,6 @@ export interface ElementsCard extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    slug: Attribute.UID<'elements.card', 'title'> & Attribute.Required;
     image: Attribute.Media<'images'>;
     description: Attribute.String;
     text: Attribute.RichText;
