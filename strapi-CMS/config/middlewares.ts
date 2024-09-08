@@ -55,13 +55,13 @@ export default [
     name: "strapi::cors",
     config: {
       origin: [
-        "http://localhost:1337",
-        "https://nation-sound-back.railway.app",
-        "*",
+        "http://localhost:3000", // pour le développement local
+        "http://localhost:1337", // pour le développement local
+        "https://nation-sound-front.vercel.app", // pour la production
       ],
-      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"], // Ajoutez 'OPTIONS' ici pour les pré-requêtes
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD"],
       headers: ["Content-Type", "Authorization"],
-      keepHeadersOnError: true, // Cette option permet de garder les en-têtes en cas d'erreur CORS
+      credentials: true,
     },
   },
   "strapi::poweredBy",
