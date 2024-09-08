@@ -54,7 +54,12 @@ export default [
   {
     name: "strapi::cors",
     config: {
-      origin: ["*"],
+      origin: [
+        "http://localhost:1337",
+        "http://localhost:3000",
+        "https://nation-sound-back.railway.app",
+        "https://nation-sound-front.vercel.app",
+      ],
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD"],
       headers: ["Content-Type", "Authorization"],
       credentials: true,

@@ -26,7 +26,6 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^5.2.0",
-    "strapi-plugin-component-preview": "^1.1.0",
     "strapi-plugin-transformer": "^3.1.2",
     "strapi-plugin-wysiwyg-react-md-editor": "^4.5.3",
     "styled-components": "^5.2.1"
