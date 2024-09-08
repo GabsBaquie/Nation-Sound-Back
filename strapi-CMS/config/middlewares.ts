@@ -55,7 +55,7 @@ export default [
     name: "strapi::cors",
     config: {
       origin: [
-        "http://localhost:3000", // pour le développement local
+        "http://localhost:3337", // pour le développement local
         "https://nation-sound-front.vercel.app", // pour la production
       ],
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD"],
