@@ -897,6 +897,69 @@ export interface ApiBilletterieBilletterie extends Schema.SingleType {
   };
 }
 
+export interface ApiConcertConcert extends Schema.CollectionType {
+  collectionName: 'concerts';
+  info: {
+    singularName: 'concert';
+    pluralName: 'concerts';
+    displayName: 'Concert';
+    description: 'Informations sur les concerts.';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.String;
+    heure: Attribute.Time & Attribute.Required;
+    lieu: Attribute.Enumeration<['Paris', 'VIP', 'Classic']>;
+    image: Attribute.Media<'images'>;
+    text: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::concert.concert',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::concert.concert',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDayDay extends Schema.CollectionType {
+  collectionName: 'days';
+  info: {
+    singularName: 'day';
+    pluralName: 'days';
+    displayName: 'Day';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    title: Attribute.String;
+    date: Attribute.Date;
+    concert: Attribute.Relation<
+      'api::day.day',
+      'oneToMany',
+      'api::concert.concert'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::day.day', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::day.day', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFilterFilter extends Schema.CollectionType {
   collectionName: 'filters';
   info: {
@@ -1022,6 +1085,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
       'api::billetterie.billetterie': ApiBilletterieBilletterie;
+      'api::concert.concert': ApiConcertConcert;
+      'api::day.day': ApiDayDay;
       'api::filter.filter': ApiFilterFilter;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::service.service': ApiServiceService;
