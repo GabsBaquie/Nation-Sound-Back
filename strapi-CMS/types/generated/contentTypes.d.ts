@@ -906,18 +906,16 @@ export interface ApiFilterFilter extends Schema.CollectionType {
     description: 'Collection pour g\u00E9rer les diff\u00E9rents types de filtres avec leurs valeurs.';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    name: Attribute.String;
     type: Attribute.Enumeration<
       ['Type', 'Importance', 'Sc\u00E8ne', 'Cat\u00E9gorie']
-    > &
-      Attribute.Required;
-    value: Attribute.String & Attribute.Required;
+    >;
+    value: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::filter.filter',
       'oneToOne',

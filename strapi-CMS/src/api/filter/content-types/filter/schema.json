@@ -8,26 +8,19 @@
     "description": "Collection pour gérer les différents types de filtres avec leurs valeurs."
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string",
-      "required": true,
-      "unique": true
+      "type": "string"
     },
     "type": {
       "type": "enumeration",
-      "enum": ["Type", "Importance", "Scène", "Catégorie"],
-      "required": true
+      "enum": ["Type", "Importance", "Scène", "Catégorie"]
     },
     "value": {
-      "type": "string",
-      "required": true
+      "type": "string"
     }
-  },
-  "config": {
-    "mainField": "name"
   }
 }
