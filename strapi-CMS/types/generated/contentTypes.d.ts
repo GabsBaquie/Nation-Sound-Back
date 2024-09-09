@@ -909,10 +909,7 @@ export interface ApiFilterFilter extends Schema.CollectionType {
     draftAndPublish: false;
   };
   attributes: {
-    name: Attribute.String;
-    type: Attribute.Enumeration<
-      ['Type', 'Importance', 'Sc\u00E8ne', 'Cat\u00E9gorie']
-    >;
+    type: Attribute.Enumeration<['Importance', 'Sc\u00E8ne', 'Cat\u00E9gorie']>;
     value: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

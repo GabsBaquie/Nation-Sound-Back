@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_blocks_concerts",
+  "info": {
+    "displayName": "Concerts",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "date": {
+      "type": "date"
+    },
+    "heure": {
+      "type": "time"
+    },
+    "lieu": {
+      "type": "enumeration",
+      "enum": [
+        "Paris",
+        "Vip",
+        "Classic"
+      ]
+    }
+  }
+}

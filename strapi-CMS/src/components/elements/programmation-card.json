@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_elements_programmation_cards",
+  "info": {
+    "displayName": "Programmation Card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

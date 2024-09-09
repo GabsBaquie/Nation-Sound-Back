@@ -12,20 +12,26 @@
     "text": {
       "type": "text"
     },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "card": {
       "type": "component",
       "repeatable": true,
-      "component": "elements.card"
-    },
-    "image": {
-      "allowedTypes": ["images"],
-      "type": "media",
-      "multiple": false
-    },
-    "image2": {
-      "allowedTypes": ["images"],
-      "type": "media",
-      "multiple": false
+      "component": "elements.programmation-card"
     }
   }
 }

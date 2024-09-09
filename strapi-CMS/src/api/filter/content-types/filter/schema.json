@@ -12,12 +12,9 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string"
-    },
     "type": {
       "type": "enumeration",
-      "enum": ["Type", "Importance", "Scène", "Catégorie"]
+      "enum": ["Importance", "Scène", "Catégorie"]
     },
     "value": {
       "type": "string"

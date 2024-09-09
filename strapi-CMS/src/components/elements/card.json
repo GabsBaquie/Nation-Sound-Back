@@ -13,9 +13,7 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
     "description": {
       "type": "string"
@@ -25,17 +23,7 @@
     },
     "importance": {
       "type": "enumeration",
-      "enum": [
-        "Très important",
-        "Important",
-        "Modéré",
-        "Peu important"
-      ]
-    },
-    "filter": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::filter.filter"
+      "enum": ["Très important", "Important", "Modéré", "Peu important"]
     }
   }
 }
