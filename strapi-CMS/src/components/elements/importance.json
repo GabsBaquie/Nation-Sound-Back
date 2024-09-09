@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_elements_importances",
+  "info": {
+    "displayName": "importance"
+  },
+  "options": {},
+  "attributes": {
+    "importance": {
+      "type": "enumeration",
+      "enum": [
+        "Très important",
+        "Important",
+        "Modéré",
+        "Peu important"
+      ]
+    }
+  }
+}

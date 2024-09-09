@@ -897,6 +897,42 @@ export interface ApiBilletterieBilletterie extends Schema.SingleType {
   };
 }
 
+export interface ApiFilterFilter extends Schema.CollectionType {
+  collectionName: 'filters';
+  info: {
+    singularName: 'filter';
+    pluralName: 'filters';
+    displayName: 'Filter';
+    description: 'Collection pour g\u00E9rer les diff\u00E9rents types de filtres avec leurs valeurs.';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    type: Attribute.Enumeration<
+      ['Type', 'Importance', 'Sc\u00E8ne', 'Cat\u00E9gorie']
+    > &
+      Attribute.Required;
+    value: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::filter.filter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::filter.filter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLandingPageLandingPage extends Schema.CollectionType {
   collectionName: 'landing_pages';
   info: {
@@ -991,6 +1027,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
       'api::billetterie.billetterie': ApiBilletterieBilletterie;
+      'api::filter.filter': ApiFilterFilter;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::service.service': ApiServiceService;
     }

@@ -93,6 +93,18 @@ export interface ElementsInput extends Schema.Component {
   };
 }
 
+export interface ElementsImportance extends Schema.Component {
+  collectionName: 'components_elements_importances';
+  info: {
+    displayName: 'importance';
+  };
+  attributes: {
+    importance: Attribute.Enumeration<
+      ['Tr\u00E8s important', 'Important', 'Mod\u00E9r\u00E9', 'Peu important']
+    >;
+  };
+}
+
 export interface ElementsForm extends Schema.Component {
   collectionName: 'components_elements_forms';
   info: {
@@ -103,6 +115,41 @@ export interface ElementsForm extends Schema.Component {
     description: Attribute.Text;
     input: Attribute.Component<'elements.input', true>;
     button: Attribute.Component<'elements.button-link'>;
+  };
+}
+
+export interface ElementsFiltres extends Schema.Component {
+  collectionName: 'components_elements_filtres';
+  info: {
+    displayName: 'filtres';
+    description: '';
+  };
+  attributes: {
+    importance: Attribute.Enumeration<
+      ['Tr\u00E8s important', 'Important', 'Mod\u00E9r\u00E9', 'Peu important']
+    >;
+    type: Attribute.Enumeration<
+      [
+        'Sc\u00E8nes',
+        'Toilettes',
+        'Campings',
+        'VIP',
+        'Bars',
+        'Restaurants',
+        'Boutiques'
+      ]
+    >;
+  };
+}
+
+export interface ElementsFilter extends Schema.Component {
+  collectionName: 'components_elements_filters';
+  info: {
+    displayName: 'Filter';
+    description: '';
+  };
+  attributes: {
+    filtres: Attribute.Component<'elements.filtres', true>;
   };
 }
 
@@ -117,6 +164,14 @@ export interface ElementsCard extends Schema.Component {
     image: Attribute.Media<'images'>;
     description: Attribute.String;
     text: Attribute.RichText;
+    importance: Attribute.Enumeration<
+      ['Tr\u00E8s important', 'Important', 'Mod\u00E9r\u00E9', 'Peu important']
+    >;
+    filter: Attribute.Relation<
+      'elements.card',
+      'oneToOne',
+      'api::filter.filter'
+    >;
   };
 }
 
@@ -249,7 +304,10 @@ declare module '@strapi/types' {
       'elements.princing-card': ElementsPrincingCard;
       'elements.poi': ElementsPoi;
       'elements.input': ElementsInput;
+      'elements.importance': ElementsImportance;
       'elements.form': ElementsForm;
+      'elements.filtres': ElementsFiltres;
+      'elements.filter': ElementsFilter;
       'elements.card': ElementsCard;
       'elements.button-link': ElementsButtonLink;
       'blocks.programmation': BlocksProgrammation;

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_elements_filters",
+  "info": {
+    "displayName": "Filter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "filtres": {
+      "displayName": "filtres",
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.filtres"
+    }
+  }
+}
