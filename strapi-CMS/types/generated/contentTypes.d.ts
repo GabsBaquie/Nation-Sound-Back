@@ -1014,7 +1014,8 @@ export interface ApiLandingPageLandingPage extends Schema.CollectionType {
         'blocks.map',
         'blocks.faq',
         'blocks.infos',
-        'blocks.footer'
+        'blocks.footer',
+        'blocks.partenaire'
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -1028,6 +1029,46 @@ export interface ApiLandingPageLandingPage extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::landing-page.landing-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPartenairePartenaire extends Schema.CollectionType {
+  collectionName: 'partenaires';
+  info: {
+    singularName: 'partenaire';
+    pluralName: 'partenaires';
+    displayName: 'Partenaire';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    name: Attribute.String;
+    type: Attribute.Enumeration<
+      [
+        'Fournisseurs d\u2019\u00E9quipements audio ',
+        'Labels de musique',
+        'boissons',
+        'Technologie et t\u00E9l\u00E9communications',
+        'M\u00E9dias'
+      ]
+    >;
+    logo: Attribute.Media<'images'>;
+    link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::partenaire.partenaire',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::partenaire.partenaire',
       'oneToOne',
       'admin::user'
     > &
@@ -1126,6 +1167,7 @@ declare module '@strapi/types' {
       'api::concert.concert': ApiConcertConcert;
       'api::day.day': ApiDayDay;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
+      'api::partenaire.partenaire': ApiPartenairePartenaire;
       'api::programmation.programmation': ApiProgrammationProgrammation;
       'api::service.service': ApiServiceService;
     }

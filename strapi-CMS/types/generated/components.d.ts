@@ -226,6 +226,21 @@ export interface BlocksPrincing extends Schema.Component {
   };
 }
 
+export interface BlocksPartenaire extends Schema.Component {
+  collectionName: 'components_blocks_partenaires';
+  info: {
+    displayName: 'Partenaire';
+    description: '';
+  };
+  attributes: {
+    partenaires: Attribute.Relation<
+      'blocks.partenaire',
+      'oneToMany',
+      'api::partenaire.partenaire'
+    >;
+  };
+}
+
 export interface BlocksMap extends Schema.Component {
   collectionName: 'components_blocks_maps';
   info: {
@@ -334,6 +349,7 @@ declare module '@strapi/types' {
       'elements.button-link': ElementsButtonLink;
       'blocks.programmation': BlocksProgrammation;
       'blocks.princing': BlocksPrincing;
+      'blocks.partenaire': BlocksPartenaire;
       'blocks.map': BlocksMap;
       'blocks.infos': BlocksInfos;
       'blocks.hero': BlocksHero;

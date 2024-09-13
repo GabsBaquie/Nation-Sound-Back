@@ -31,7 +31,8 @@
         "blocks.map",
         "blocks.faq",
         "blocks.infos",
-        "blocks.footer"
+        "blocks.footer",
+        "blocks.partenaire"
       ]
     }
   }

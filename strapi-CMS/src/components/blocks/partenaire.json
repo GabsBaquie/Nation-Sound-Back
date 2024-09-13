@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_partenaires",
+  "info": {
+    "displayName": "Partenaire",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "partenaires": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::partenaire.partenaire"
+    }
+  }
+}
