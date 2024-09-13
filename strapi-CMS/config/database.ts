@@ -8,7 +8,7 @@ export default ({ env }) => {
         host: env("DATABASE_HOST", "autorack.proxy.rlwy.net"),
         port: env.int("DATABASE_PORT", 59624),
         database: env("DATABASE_NAME", "railway"),
-        user: env("DATABASE_USERNAME", "root"),
+        user: env("DATABASE_USERNAME", "admin"),
         password: env("DATABASE_PASSWORD", "QMVgOBeAUjosMGEIBqHcSpJAkPMdUUkv"),
         ssl: env.bool("DATABASE_SSL", false),
         bigNumberStrings: true, // Cette option est propre à mysql2
