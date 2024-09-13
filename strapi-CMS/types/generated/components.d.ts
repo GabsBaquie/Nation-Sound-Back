@@ -21,8 +21,6 @@ export interface BlocksProgrammation extends Schema.Component {
   attributes: {
     title: Attribute.String;
     text: Attribute.Text;
-    image: Attribute.Media<'images'>;
-    image2: Attribute.Media<'images'>;
     card: Attribute.Component<'elements.programmation-card', true>;
   };
 }
@@ -80,6 +78,19 @@ export interface BlocksHero extends Schema.Component {
   };
 }
 
+export interface BlocksFooter extends Schema.Component {
+  collectionName: 'components_blocks_footers';
+  info: {
+    displayName: 'Footer';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    text: Attribute.String;
+    Reseaux: Attribute.Component<'elements.reseaux', true>;
+  };
+}
+
 export interface BlocksFaq extends Schema.Component {
   collectionName: 'components_blocks_faqs';
   info: {
@@ -129,6 +140,21 @@ export interface ElementsSection extends Schema.Component {
   };
 }
 
+export interface ElementsReseaux extends Schema.Component {
+  collectionName: 'components_elements_reseaux';
+  info: {
+    displayName: 'Reseaux';
+    description: '';
+  };
+  attributes: {
+    List: Attribute.Enumeration<
+      ['Facebook', 'Twitter', 'Instagram', 'Youtube']
+    >;
+    icon: Attribute.Media<'images', true>;
+    link: Attribute.String;
+  };
+}
+
 export interface ElementsQuestions extends Schema.Component {
   collectionName: 'components_elements_questions';
   info: {
@@ -151,7 +177,6 @@ export interface ElementsProgrammationCard extends Schema.Component {
     title: Attribute.String;
     description: Attribute.String;
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    text: Attribute.RichText;
     days: Attribute.Relation<
       'elements.programmation-card',
       'oneToMany',
@@ -300,10 +325,12 @@ declare module '@strapi/types' {
       'blocks.map': BlocksMap;
       'blocks.infos': BlocksInfos;
       'blocks.hero': BlocksHero;
+      'blocks.footer': BlocksFooter;
       'blocks.faq': BlocksFaq;
       'blocks.cta': BlocksCta;
       'blocks.article': BlocksArticle;
       'elements.section': ElementsSection;
+      'elements.reseaux': ElementsReseaux;
       'elements.questions': ElementsQuestions;
       'elements.programmation-card': ElementsProgrammationCard;
       'elements.princing-card': ElementsPrincingCard;

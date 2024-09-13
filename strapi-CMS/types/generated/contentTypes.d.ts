@@ -914,7 +914,6 @@ export interface ApiConcertConcert extends Schema.CollectionType {
     heure: Attribute.Time & Attribute.Required;
     lieu: Attribute.Enumeration<['Paris', 'VIP', 'Classic']>;
     image: Attribute.Media<'images'>;
-    text: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -960,37 +959,6 @@ export interface ApiDayDay extends Schema.CollectionType {
   };
 }
 
-export interface ApiFilterFilter extends Schema.CollectionType {
-  collectionName: 'filters';
-  info: {
-    singularName: 'filter';
-    pluralName: 'filters';
-    displayName: 'Filter';
-    description: 'Collection pour g\u00E9rer les diff\u00E9rents types de filtres avec leurs valeurs.';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    type: Attribute.Enumeration<['Importance', 'Sc\u00E8ne', 'Cat\u00E9gorie']>;
-    value: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::filter.filter',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::filter.filter',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiLandingPageLandingPage extends Schema.CollectionType {
   collectionName: 'landing_pages';
   info: {
@@ -1013,7 +981,8 @@ export interface ApiLandingPageLandingPage extends Schema.CollectionType {
         'blocks.princing',
         'blocks.map',
         'blocks.faq',
-        'blocks.infos'
+        'blocks.infos',
+        'blocks.footer'
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -1123,7 +1092,6 @@ declare module '@strapi/types' {
       'api::billetterie.billetterie': ApiBilletterieBilletterie;
       'api::concert.concert': ApiConcertConcert;
       'api::day.day': ApiDayDay;
-      'api::filter.filter': ApiFilterFilter;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::programmation.programmation': ApiProgrammationProgrammation;
       'api::service.service': ApiServiceService;

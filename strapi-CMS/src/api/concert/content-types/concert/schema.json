@@ -38,9 +38,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "text": {
-      "type": "richtext"
     }
   }
 }

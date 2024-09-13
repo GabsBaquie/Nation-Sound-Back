@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_blocks_programmations",
+  "collectionName": "components_blocks_footers",
   "info": {
-    "displayName": "Programmation",
+    "displayName": "Footer",
     "description": ""
   },
   "options": {},
@@ -10,12 +10,13 @@
       "type": "string"
     },
     "text": {
-      "type": "text"
+      "type": "string"
     },
-    "card": {
+    "Reseaux": {
+      "displayName": "Reseaux",
       "type": "component",
       "repeatable": true,
-      "component": "elements.programmation-card"
+      "component": "elements.reseaux"
     }
   }
 }

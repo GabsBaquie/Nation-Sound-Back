@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_elements_reseaux",
+  "info": {
+    "displayName": "Reseaux",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "List": {
+      "type": "enumeration",
+      "enum": [
+        "Facebook",
+        "Twitter",
+        "Instagram",
+        "Youtube"
+      ]
+    },
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}
