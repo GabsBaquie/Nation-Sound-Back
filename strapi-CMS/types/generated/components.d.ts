@@ -32,7 +32,7 @@ export interface ElementsReseaux extends Schema.Component {
     description: '';
   };
   attributes: {
-    List: Attribute.Enumeration<
+    list: Attribute.Enumeration<
       ['Facebook', 'Twitter', 'Instagram', 'Youtube']
     >;
     icon: Attribute.Media<'images'>;
