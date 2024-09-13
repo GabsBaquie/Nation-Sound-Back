@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "alertes",
+  "info": {
+    "singularName": "alerte",
+    "pluralName": "alertes",
+    "displayName": "Alerte"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "urgence": {
+      "type": "boolean"
+    },
+    "actif": {
+      "type": "boolean"
+    }
+  }
+}

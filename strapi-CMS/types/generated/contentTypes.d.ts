@@ -861,6 +861,38 @@ export interface ApiAboutAbout extends Schema.SingleType {
   };
 }
 
+export interface ApiAlerteAlerte extends Schema.CollectionType {
+  collectionName: 'alertes';
+  info: {
+    singularName: 'alerte';
+    pluralName: 'alertes';
+    displayName: 'Alerte';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    urgence: Attribute.Boolean;
+    actif: Attribute.Boolean;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::alerte.alerte',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::alerte.alerte',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBilletterieBilletterie extends Schema.SingleType {
   collectionName: 'billetteries';
   info: {
@@ -1089,6 +1121,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
+      'api::alerte.alerte': ApiAlerteAlerte;
       'api::billetterie.billetterie': ApiBilletterieBilletterie;
       'api::concert.concert': ApiConcertConcert;
       'api::day.day': ApiDayDay;
