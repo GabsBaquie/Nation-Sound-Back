@@ -12,7 +12,6 @@ Développement personnalisé :
 
     •	API et logique métier : Bien que Strapi génère des API par défaut, j’ai codé des endpoints et des logiques métier supplémentaires pour gérer des cas d’utilisation spécifiques, comme la gestion avancée des partenaires ou la personnalisation des alertes.
     •	Sécurisation des données : J’ai intégré des mesures de sécurité supplémentaires pour assurer la conformité avec le RGPD et les bonnes pratiques de sécurisation des API (par exemple, la gestion des rôles et permissions utilisateurs avancée, l’authentification renforcée).
-    •	Scripts d’automatisation : J’ai développé des scripts pour automatiser certaines tâches, telles que l’insertion et la gestion des données en base de données.
 
 Fonctionnalités du CMS
 
