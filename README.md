@@ -13,8 +13,6 @@ Ce projet est une application CMS (Content Management System) construite avec St
   - [Types de contenu](#types-de-contenu)
   - [Composants](#composants)
 - [Docker](#docker)
-- [Contribution](#contribution)
-- [Licence](#licence)
 
 ## Structure du projet
 
