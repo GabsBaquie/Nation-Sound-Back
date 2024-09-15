@@ -1,62 +1,198 @@
-# Nation-Sound-Back
-## 🚀 Getting started with Strapi
+# Strapi CMS
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+Ce projet est une application CMS (Content Management System) construite avec Strapi. Il permet de gérer différents types de contenu tels que des concerts, des partenaires, des alertes, etc.
 
-### `develop`
+## Table des matières
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+- [Structure du projet](#structure-du-projet)
+- [Installation](#installation)
+- [Configuration](#configuration)
+  - [Base de données](#base-de-données)
+  - [Plugins](#plugins)
+- [Contenu](#contenu)
+  - [Types de contenu](#types-de-contenu)
+  - [Composants](#composants)
+- [Docker](#docker)
+- [Contribution](#contribution)
+- [Licence](#licence)
 
-```
-npm run develop
-# or
-yarn develop
-```
-
-### `start`
-
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
-
-```
-npm run start
-# or
-yarn start
-```
-
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+## Structure du projet
 
 ```
-npm run build
-# or
-yarn build
+
+.
+├── strapi-CMS/
+│   ├── .editorconfig
+│   ├── .env
+│   ├── .env.example
+│   ├── .strapi/
+│   │   ├── client/
+│   │   │   ├── app.js
+│   │   │   └── index.html
+│   ├── .strapi-updater.json
+│   ├── config/
+│   │   ├── admin.ts
+│   │   ├── api.ts
+│   │   ├── database.ts
+│   │   ├── middlewares.ts
+│   │   ├── plugins.ts
+│   │   └── server.ts
+│   ├── database/
+│   │   └── migrations/
+│   │       └── .gitkeep
+│   ├── package.json
+│   ├── public/
+│   │   └── uploads/
+│   │       └── .gitkeep
+│   ├── README.md
+│   ├── src/
+│   │   ├── admin/
+│   │   │   └── app.example.tsx
+│   │   ├── api/
+│   │   │   ├── concerts/
+│   │   │   │   ├── controllers/
+│   │   │   │   │   └── concerts.ts
+│   │   │   │   ├── models/
+│   │   │   │   │   └── concerts.settings.json
+│   │   │   │   └── services/
+│   │   │   │       └── concerts.ts
+│   │   │   ├── partenaires/
+│   │   │   │   ├── controllers/
+│   │   │   │   │   └── partenaires.ts
+│   │   │   │   ├── models/
+│   │   │   │   │   └── partenaires.settings.json
+│   │   │   │   └── services/
+│   │   │   │       └── partenaires.ts
+│   │   │   ├── alertes/
+│   │   │   │   ├── controllers/
+│   │   │   │   │   └── alertes.ts
+│   │   │   │   ├── models/
+│   │   │   │   │   └── alertes.settings.json
+│   │   │   │   └── services/
+│   │   │   │       └── alertes.ts
+│   │   ├── components/
+│   │   │   ├── card/
+│   │   │   │   └── card.json
+│   │   │   ├── programmation-card/
+│   │   │   │   └── programmation-card.json
+│   │   │   ├── infos/
+│   │   │   │   └── infos.json
+│   │   │   ├── footer/
+│   │   │   │   └── footer.json
+│   │   │   ├── reseaux/
+│   │   │       └── reseaux.json
+│   │   ├── extensions/
+│   │   └── index.ts
+│   ├── tsconfig.json
+│   ├── tsconfig.tsbuildinfo
+│   └── types/
+│       └── generated/
+
 ```
 
-## ⚙️ Deployment
+## Installation
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+1. Clonez le dépôt :
 
+   ```sh
+   git clone <URL_DU_DEPOT>
+   cd strapi-CMS
+   ```
+
+2. Installez les dépendances :
+
+   ```sh
+   npm install
+   ```
+
+3. Configurez les variables d'environnement en copiant le fichier `.env.example` en `.env` et en remplissant les valeurs nécessaires.
+
+## Configuration
+
+### Base de données
+
+La configuration de la base de données se trouve dans le fichier `config/database.ts`. Par défaut, le projet utilise MySQL. Vous pouvez modifier les paramètres de connexion en fonction de votre environnement.
+
+Exemple de configuration MySQL :
+
+```typescript
+module.exports = ({ env }) => ({
+  connection: {
+    client: "mysql",
+    connection: {
+      host: env("DATABASE_HOST", "localhost"),
+      port: env.int("DATABASE_PORT", 3306),
+      database: env("DATABASE_NAME", "strapi"),
+      user: env("DATABASE_USERNAME", "root"),
+      password: env("DATABASE_PASSWORD", "password"),
+      ssl: env.bool("DATABASE_SSL", false),
+    },
+  },
+});
 ```
-yarn strapi deploy
-```
 
-## 📚 Learn more
+### Plugins
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+Les plugins sont configurés dans le fichier `config/plugins.ts`. Voici quelques plugins inclus :
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+- **wysiwyg-react-md-editor** : Un éditeur WYSIWYG pour les champs de texte.
+- **google-maps** : Intégration de Google Maps pour les champs de localisation.
+- **entity-relationship-chart** : Visualisation des relations entre les entités.
+- **transformer** : Plugin pour transformer les données avant de les sauvegarder.
 
-## ✨ Community
+## Contenu
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+### Types de contenu
 
----
+- **Concerts** : Gère les informations sur les concerts.
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+  - `controllers/concerts.ts`
+  - `models/concerts.settings.json`
+  - `services/concerts.ts`
+
+- **Partenaires** : Gère les informations sur les partenaires.
+
+  - `controllers/partenaires.ts`
+  - `models/partenaires.settings.json`
+  - `services/partenaires.ts`
+
+- **Alertes** : Gère les alertes.
+  - `controllers/alertes.ts`
+  - `models/alertes.settings.json`
+  - `services/alertes.ts`
+
+### Composants
+
+- **Card** : Composant pour afficher des cartes d'information.
+
+  - `components/card/card.json`
+
+- **Programmation Card** : Composant pour afficher la programmation des concerts.
+
+  - `components/programmation-card/programmation-card.json`
+
+- **Infos** : Composant pour afficher des informations générales.
+
+  - `components/infos/infos.json`
+
+- **Footer** : Composant pour le pied de page.
+
+  - `components/footer/footer.json`
+
+- **Reseaux** : Composant pour les liens vers les réseaux sociaux.
+  - `components/reseaux/reseaux.json`
+
+## Docker
+
+Un fichier Dockerfile est inclus pour faciliter le déploiement de l'application. Pour construire et exécuter le conteneur Docker :
+
+1. Construisez l'image Docker :
+
+   ```sh
+   docker build -t strapi-cms .
+   ```
+
+2. Exécutez le conteneur :
+   ```sh
+   docker run -p 1337:1337 strapi-cms
+   ```
