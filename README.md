@@ -1,12 +1,10 @@
-# Strapi CMS
-
-Strapi CMS avec personnalisation back-end
+# Strapi CMS avec personnalisation back-end
 
 Ce projet est une application CMS (Content Management System) construite avec Strapi, un framework open-source basé sur Node.js, combiné avec un développement back-end personnalisé. Strapi permet de créer, gérer et distribuer du contenu via une API RESTful ou GraphQL de manière flexible. Cependant, pour répondre aux exigences spécifiques du projet, j’ai ajouté et développé des fonctionnalités supplémentaires au niveau du back-end.
 
 Backoffice de Strapi et développement personnalisé
 
-Le backoffice de Strapi offre une interface d’administration qui permet de gérer le contenu (concerts, partenaires, alertes). J’ai utilisé cette interface pour définir les types de contenu, mais j’ai également développé des fonctionnalités supplémentaires en back-end pour répondre à des besoins spécifiques non couverts par défaut par Strapi.
+Le backoffice de Strapi offre une interface d’administration qui permet de gérer le contenu (concerts, partenaires, alertes). J’ai utilisé cette interface pour définir les types de contenu, mais j’ai également développé des fonctionnalités supplémentaires en back-end pour répondre à des besoins spécifiques non couverts par Strapi.
 
 Développement personnalisé :
 
