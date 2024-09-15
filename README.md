@@ -1,6 +1,40 @@
 # Strapi CMS
 
-Ce projet est une application CMS (Content Management System) construite avec Strapi. Il permet de gérer différents types de contenu tels que des concerts, des partenaires, des alertes, etc.
+Strapi CMS avec personnalisation back-end
+
+Ce projet est une application CMS (Content Management System) construite avec Strapi, un framework open-source basé sur Node.js, combiné avec un développement back-end personnalisé. Strapi permet de créer, gérer et distribuer du contenu via une API RESTful ou GraphQL de manière flexible. Cependant, pour répondre aux exigences spécifiques du projet, j’ai ajouté et développé des fonctionnalités supplémentaires au niveau du back-end.
+
+Backoffice de Strapi et développement personnalisé
+
+Le backoffice de Strapi offre une interface d’administration qui permet de gérer le contenu (concerts, partenaires, alertes). J’ai utilisé cette interface pour définir les types de contenu, mais j’ai également développé des fonctionnalités supplémentaires en back-end pour répondre à des besoins spécifiques non couverts par défaut par Strapi.
+
+Développement personnalisé :
+
+    •	API et logique métier : Bien que Strapi génère des API par défaut, j’ai codé des endpoints et des logiques métier supplémentaires pour gérer des cas d’utilisation spécifiques, comme la gestion avancée des partenaires ou la personnalisation des alertes.
+    •	Sécurisation des données : J’ai intégré des mesures de sécurité supplémentaires pour assurer la conformité avec le RGPD et les bonnes pratiques de sécurisation des API (par exemple, la gestion des rôles et permissions utilisateurs avancée, l’authentification renforcée).
+    •	Scripts d’automatisation : J’ai développé des scripts pour automatiser certaines tâches, telles que l’insertion et la gestion des données en base de données.
+
+Fonctionnalités du CMS
+
+    •	Gestion des concerts : Création, modification et suppression des informations sur les concerts via le backoffice, avec une logique métier codée pour valider et organiser ces données de manière optimisée.
+    •	Gestion des partenaires : Développement de composants back-end spécifiques pour gérer les partenaires, en plus de la gestion via le backoffice.
+    •	Gestion des alertes : Système d’alerte personnalisé, où les administrateurs peuvent gérer des notifications urgentes pour les utilisateurs.
+    •	API Backend : En plus de l’API générée par Strapi, j’ai développé des endpoints supplémentaires pour des besoins spécifiques en matière de performances et de sécurité.
+
+Avantages de l’approche hybride Strapi + code personnalisé
+
+    •	Flexibilité : L’utilisation de Strapi permet de bénéficier d’un CMS robuste, mais le développement personnalisé permet d’ajouter des fonctionnalités spécifiques et sur-mesure.
+    •	Performance : J’ai optimisé certaines parties du back-end pour mieux répondre aux besoins de performance du projet, en ajustant les requêtes vers la base de données et en optimisant certaines API.
+    •	Sécurité : Au-delà des fonctionnalités de sécurité intégrées à Strapi, j’ai ajouté des protections supplémentaires pour répondre aux exigences du projet (RGPD, sécurisation des accès au backoffice, gestion des utilisateurs).
+
+Technologies utilisées
+
+    •	Node.js : Environnement d’exécution JavaScript côté serveur.
+    •	Strapi : Framework CMS basé sur Node.js.
+    •	MySQL : Base de données relationnelle utilisée pour stocker les données.
+    •	Docker : Conteneurisation pour faciliter le déploiement et la gestion de l’application.
+    •	TypeScript : Langage de programmation utilisé pour améliorer la qualité et la maintenabilité du code.
+    •	Développement personnalisé : En plus de l’utilisation de Strapi, des fonctionnalités et des API supplémentaires ont été codées pour répondre aux exigences spécifiques du projet.
 
 ## Table des matières
 
