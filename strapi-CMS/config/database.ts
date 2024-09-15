@@ -5,12 +5,12 @@ export default ({ env }) => {
     mysql2: {
       client: "mysql2",
       connection: {
-        host: env("DATABASE_HOST", "autorack.proxy.rlwy.net"),
-        port: env.int("DATABASE_PORT", 59624),
+        host: env("DATABASE_HOST"),
+        port: env.int("DATABASE_PORT"),
         database: env("DATABASE_NAME"),
         user: env("DATABASE_USERNAME"),
         password: env("DATABASE_PASSWORD"),
-        ssl: env.bool("DATABASE_SSL", false),
+        ssl: env.bool("DATABASE_SSL"),
         bigNumberStrings: true, // Cette option est propre à mysql2
       },
       debug: false, // Activer le debug pour plus d'informations
