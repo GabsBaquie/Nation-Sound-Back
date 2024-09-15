@@ -18,10 +18,12 @@
       "type": "text"
     },
     "urgence": {
-      "type": "boolean"
+      "type": "boolean",
+      "required": true
     },
     "actif": {
-      "type": "boolean"
+      "type": "boolean",
+      "required": true
     }
   }
 }

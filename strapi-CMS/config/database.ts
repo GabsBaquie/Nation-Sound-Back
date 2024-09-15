@@ -7,10 +7,10 @@ export default ({ env }) => {
       connection: {
         host: env("DATABASE_HOST", "autorack.proxy.rlwy.net"),
         port: env.int("DATABASE_PORT", 59624),
-        database: env("DATABASE_NAME", "railway"),
-        user: env("DATABASE_USERNAME", "admin"),
-        password: env("DATABASE_PASSWORD", "QMVgOBeAUjosMGEIBqHcSpJAkPMdUUkv"),
-        ssl: env.bool("DATABASE_SSL", false),
+        database: env("DATABASE_NAME"),
+        user: env("DATABASE_USERNAME"),
+        password: env("DATABASE_PASSWORD"),
+        ssl: env.bool("DATABASE_SSL", true),
         bigNumberStrings: true, // Cette option est propre à mysql2
       },
       debug: false, // Activer le debug pour plus d'informations

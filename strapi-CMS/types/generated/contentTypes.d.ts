@@ -874,8 +874,8 @@ export interface ApiAlerteAlerte extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     description: Attribute.Text;
-    urgence: Attribute.Boolean;
-    actif: Attribute.Boolean;
+    urgence: Attribute.Boolean & Attribute.Required;
+    actif: Attribute.Boolean & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
