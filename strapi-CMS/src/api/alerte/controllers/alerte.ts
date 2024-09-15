@@ -9,7 +9,6 @@ export default factories.createCoreController(
   ({ strapi }) => ({
     // Méthode personnalisée pour récupérer les alertes urgentes
     async findUrgentAlerts(ctx) {
-      console.log("findUrgentAlerts called"); // Debug
       try {
         const urgentAlerts = await strapi.entityService.findMany(
           "api::alerte.alerte",
@@ -23,10 +22,8 @@ export default factories.createCoreController(
           return ctx.throw(404, "Aucune alerte urgente trouvée");
         }
 
-        console.log("Urgent Alerts:", urgentAlerts); // Debug
         ctx.body = urgentAlerts;
       } catch (error) {
-        console.log("Error:", error); // Debug
         return ctx.throw(
           500,
           "Erreur lors de la récupération des alertes urgentes"
@@ -36,26 +33,21 @@ export default factories.createCoreController(
 
     // Méthode personnalisée pour récupérer les alertes actives
     async findActiveAlerts(ctx) {
-      console.log("findActiveAlerts called"); // Debug
       try {
         const activeAlerts = await strapi.entityService.findMany(
           "api::alerte.alerte",
           {
-            filters: { actif: true }, // Filtrer par le champ actif
-            populate: [], // Remplir des relations si nécessaire
+            filters: { actif: true },
+            populate: [],
           }
         );
-
-        console.log("Active Alerts:", activeAlerts); // Debug pour voir les résultats
 
         if (!activeAlerts || activeAlerts.length === 0) {
           return ctx.throw(404, "Aucune alerte active trouvée");
         }
 
-        // Retourner les alertes actives
         ctx.body = activeAlerts;
       } catch (error) {
-        console.log("Error:", error); // Debug des erreurs
         return ctx.throw(
           500,
           "Erreur lors de la récupération des alertes actives"
