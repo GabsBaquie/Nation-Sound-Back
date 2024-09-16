@@ -4,17 +4,22 @@ FROM node:22.7-bookworm-slim
 # Définir le répertoire de travail dans le conteneur
 WORKDIR /app
 
-# Copier les fichiers package.json et package-lock.json depuis strapi-CMS
+# Copier les fichiers package.json et package-lock.json
 COPY strapi-CMS/package*.json ./
 
-# Installer les dépendances de production uniquement
-RUN npm install --production
+# Installer les dépendances
+RUN npm install --production && npm cache clean --force
 
 # Copier tout le contenu du répertoire strapi-CMS dans le répertoire de travail
-COPY strapi-CMS .
+COPY strapi-CMS ./
 
 # Construire l'application Strapi
 RUN npm run build
+
+# Ajouter un utilisateur non-root pour des raisons de sécurité
+RUN useradd -ms /bin/bash strapiuser
+RUN chown -R strapiuser:strapiuser /app
+USER strapiuser
 
 # Exposer le port utilisé par Strapi
 EXPOSE 1337
