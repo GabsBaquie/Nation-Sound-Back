@@ -1,5 +1,5 @@
 # Utiliser une image de base Node.js compatible avec Strapi
-FROM node:18
+FROM node:20.17
 
 # Définir le répertoire de travail dans le conteneur
 WORKDIR /app
