@@ -19,7 +19,7 @@
     "@strapi/plugin-cloud": "4.25.9",
     "@strapi/plugin-i18n": "^4.16.2",
     "@strapi/plugin-users-permissions": "^4.8.1",
-    "@strapi/strapi": "^4.24.5",
+    "@strapi/strapi": "^5.0.0",
     "marked": "^13.0.3",
     "mysql": "^2.18.1",
     "mysql2": "^3.11.0",
