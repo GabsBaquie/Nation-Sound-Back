@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@amicaldo/strapi-google-maps": "^1.1.5",
-    "@strapi/plugin-cloud": "4.25.9",
+    "@strapi/plugin-cloud": "4.25.10",
     "@strapi/plugin-i18n": "^4.16.2",
     "@strapi/plugin-users-permissions": "^4.8.1",
     "@strapi/strapi": "^4.24.5",
